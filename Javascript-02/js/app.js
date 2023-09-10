@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Assignment-01</title>
-</head>
-<body>
 
-<script>
 
 // document.write("Assignment-01")
 	
@@ -40,7 +31,11 @@
 // document.write(a);
 
 
+
+
 // document.write("<br><br> Assignment-02 <br><br> ")
+
+
 
 // var a = 2, b = 1
 // var result = --a - --b + ++b + b--;
@@ -75,7 +70,10 @@
 
 // document.write(result);
 
+
+
 // document.write("<br><br> Assignment-03 <br><br> ")
+
 
 // var  firstName = prompt("Enter Your Fristname")
 // var  lastName = prompt("Enter Your lastname")
@@ -95,9 +93,3 @@
 // }	
 
 // obtain/ total *100
-
-</script>
-
-
-</body>
-</html >
