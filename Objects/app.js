@@ -183,73 +183,49 @@
 var carVariants ={
 	honda:{
 		civic:{
-			civic:{
-				image:"",
-				name: "civic",
-				model: 2020,
-				gets: 4,
-				wheels: 5,
-				colors: ["black", "red", "White"],
-				price: 450000,
-			}
+			image:"<img src='images/civic.jpg'>",
+			name: "civic",
+			model: 2020,
+			gets: 4,
+			wheels: 5,
+			colors: ["black", "red", "White"],
+			price: 450000,
 		},
 		city:{
-			city:{
-				image:"",
-				name: "city",
-				model: 2020,
-				gets: 4,
-				wheels: 5,
-				colors: ["black", "red", "White"],
-				price: 450000,
-			}
-		}
-
+			image:"<img src='images/city.jpg'>",
+			name: "city",
+			model: 2020,
+			gets: 4,
+			wheels: 5,
+			colors: ["black", "red", "White"],
+			price: 450000,
+		},
 	},
 	toyota:{
 		carola:{
-			gli:{
-				image:"",
-				name: "glic",
-				model: 2020,
-				gets: 4,
-				wheels: 5,
-				colors: ["black", "red", "White"],
-				price: 450000,
-			},
-			Xli:{
-				image:"",
-				name: "Xlic",
-				model: 2020,
-				gets: 4,
-				wheels: 5,
-				colors: ["black", "red", "White"],
-				price: 450000,
-			}
+			image:"<img src='images/crola-xli.jpg'>",
+			name: "carola",
+			model: 2020,
+			gets: 4,
+			wheels: 5,
+			colors: ["black", "red", "White"],
+			price: 450000,
 		},
 		Yaris:{
-			yaris:{
-				image:"",
-				name: "Yaris",
-				model: 2020,
-				gets: 4,
-				wheels: 5,
-				colors: ["black", "red", "White"],
-				price: 450000,
-			},
-			yariscross:{
-				image:"",
-				name: "Yaris Cross",
-				model: 2020,
-				gets: 4,
-				wheels: 5,
-				colors: ["black", "red", "White"],
-				price: 450000,
-			}
-		}
-	}
-	
+			image:"<img src='images/yariscross.jpg'>",
+			name: "yariscross",
+			model: 2020,
+			gets: 4,
+			wheels: 5,
+			colors: ["black", "red", "White"],
+			price: 450000,
+		},
+	},
 }
+
+
+
+
 
 
 var company = document.getElementById("company");
@@ -259,26 +235,40 @@ var allCars = document.getElementById("allCars");
 company.innerHTML = `<option value="">Select Company</option>`
 brand.innerHTML = `<option value="">Select Brand</option>`
 
+
 for(var key in carVariants){
 	company.innerHTML +=`
 	<option value="${key}">${key.toUpperCase()}</option>
 	`
 	for(var key1 in carVariants[key]){
-		for(var key2 in carVariants[key][key1])
+		var carData = carVariants[key][key1]
 
-		allCars.innerHTML += `
+		var colorsDiv = ""
+	for(var i = 0; i < carData.colors.length; i++){
+		colorsDiv += `
+		<div class="m-1" style="width:20px; height:20px; border: 1px solid #9d9494; border-radius:10px; background-color: ${carData.colors[i]}"></div>
+		`
+	}
+
+
+			allCars.innerHTML += `
 		<div class="col-md-4">
 			<div class="result-box">
-				<h3>${carVariants[key][key1][key2].name}</h3>
-				<h4>${carVariants[key][key1][key2].model}</h4>
-				<p>${carVariants[key][key1][key2].gets}</p>
-				<p>${carVariants[key][key1][key2].wheels}</p>
-				<h5>${carVariants[key][key1][key2].colors}</h5>
-				<h6>${carVariants[key][key1][key2].price}</h6>
+			<div class="image-thumb">${carData.image}</div>
+				<h3>${carData.name}</h3>
+				<h4>Model: ${carData.model}</h4>
+				<p>Gets: ${carData.gets}</p>
+				<p>Wheels: ${carData.wheels}</p>
+				<div class="car-color d-flex">${colorsDiv}</div> 
+				<h6>Price: ${carData.price}</h6>
+				
 			</div>
 		</div>`
+	
+
 	}
 }
+
 
 function onCompanyChange(){
 	brand.innerHTML = ""
@@ -292,22 +282,22 @@ function onCompanyChange(){
 
 
 function filterCars(){
-
-	var carData = carVariants[company.value][brand.value]
-
+  
+	var collactData = (carVariants[company.value][brand.value])
 	allCars.innerHTML = `
-		<div class="col-md-4">
-			<div class="result-box">
-				<h3>${carData.name}</h3>
-				<h4>${carData.model}</h4>
-				<p>${carData.gets}</p>
-				<p>${carData.wheels}</p>
-				<h5>${carData.colors}</h5>
-				<h6>${carData.price}</h6>
+		<div class="col-md-12">
+			<div class="result-box last-bx">
+			<div class="image-thumb">${collactData.image}</div>
+			<div class="cont-box">
+			    <h3>${collactData.name}</h3>
+				<h4>Model: ${collactData.model}</h4>
+				<p>Gets: ${collactData.gets}</p>
+				<p>Wheels: ${collactData.wheels}</p>
+				<div class="car-color d-flex">${colorsDiv}</div> 
+				<h6>Price: ${collactData.price}</h6>
 			</div>
-		</div>
-		`
-
-console.log(carData)
+		</div>`
 }
+
+
 
