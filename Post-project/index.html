@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post-type</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/23068ff3af.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="nav-brand">
+						<a href="#!">
+							<img src="images/vbvb.png">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<ul class="social-media">
+						<li><a href="#!"><i class="fa-brands fa-facebook-f"></i></a></li>
+						<li><a href="#!"><i class="fa-brands fa-twitter"></i></a></li>
+						<li><a href="#!"><i class="fa-brands fa-instagram"></i></a></li>
+						<li><a href="#!"><i class="fa-brands fa-linkedin-in"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div class="top-btn">
+						<a href="#!"><i class="far fa-user"></i> Login/Resgister</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="content">
+		<section class="section-one">
+			<div class="container">
+				<div class="box-one">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="post-inner-bx">
+								<div class="input-box">
+									<input id="title" type="text" name="title" placeholder="Post Title">
+									<textarea id="discription" placeholder="Write a coment here..."></textarea>
+								</div>
+								<div class="petrn-bg-img d-flex">
+									<img class="bg-image" onclick="selectImage('images/perten-img-1.png')" src="images/perten-img-1.png">
+									<img class="bg-image" onclick="selectImage('images/perten-img-2.png')" src="images/perten-img-2.png">
+									<img class="bg-image" onclick="selectImage('images/perten-img-3.png')" src="images/perten-img-3.png">
+									<img class="bg-image" onclick="selectImage('images/perten-img-4.png')" src="images/perten-img-4.png">
+									<img class="bg-image" onclick="selectImage('images/perten-img-5.png')"src="images/perten-img-5.png">
+								</div>
+								<div class="post-btn">
+									<button onclick="addpost()" type="submit">Post</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="image-wraper">
+								<img src="images/img-1.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-two">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="images-wraper">
+							<img src="images/img-2.png">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card-box">
+							<div id="posts">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
