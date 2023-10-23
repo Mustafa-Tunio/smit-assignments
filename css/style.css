@@ -216,6 +216,7 @@ section.hme-sec-one .row {
     overflow: hidden;
     position: relative;
     z-index: 9999;
+    margin-bottom: 50px;
 }
 
 .info-list-w-icon .ci-text {
